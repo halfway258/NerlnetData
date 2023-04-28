@@ -2,6 +2,7 @@
 
 -export([start/1]).
 
+
 start(FName) ->
     {ok, Data} = file:read_file(FName),
     % io:format("Old: ~p~n",[Data]),
@@ -17,10 +18,12 @@ removeLineNum(Data) ->
     %% some elements will look like X\nNUM, need to replace with X\n
     trimElem(Elements, []).
 
+
+%% for not float, change left param to be 2 and no "\n"
 trimElem([], Data) -> Data;
 trimElem([Elem | Elements], Data) ->
     case string:find(Elem, "\n") of
         nomatch -> trimElem(Elements, Data ++ Elem ++ ",");
-        _Normal -> trimElem(Elements, Data ++ string:left(Elem, 3) ++ "\n")
+        _Normal -> trimElem(Elements, Data ++ string:left(Elem, 2))
     end.
 
