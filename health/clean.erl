@@ -16,14 +16,15 @@ start(FName) ->
 removeLineNum(Data) ->
     Elements = string:split(Data, ",", all),
     %% some elements will look like X\nNUM, need to replace with X\n
-    trimElem(Elements, []).
+    tl(string:split(trimElem(Elements, []), ",")).  %% and remove first line number
 
 
-%% for not float, change left param to be 2 and no "\n"
+%% for int:     change to: trimElem(Elements, Data ++ string:left(Elem, 2))         %% <------- CHANGE HERE
+%% for float:   change to: trimElem(Elements, Data ++ string:left(Elem, 3) ++ "\n") %% <------- CHANGE HERE
 trimElem([], Data) -> Data;
 trimElem([Elem | Elements], Data) ->
     case string:find(Elem, "\n") of
         nomatch -> trimElem(Elements, Data ++ Elem ++ ",");
-        _Normal -> trimElem(Elements, Data ++ string:left(Elem, 2))
+        _Normal -> trimElem(Elements, Data ++ string:left(Elem, 2)) %% <------- CHANGE HERE
     end.
 
