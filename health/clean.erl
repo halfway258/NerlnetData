@@ -1,7 +1,14 @@
 -module(clean).
 
--export([start/1]).
+-export([start/0, start/1]).
 
+%% clean all files ending with .csv in folder
+start() ->
+    {ok, Dir} = file:get_cwd(),
+    {ok, Files} = file:list_dir(Dir),
+    CSVs = [File || File <- Files, string:find(File, ".csv", trailing) /= nomatch],
+    logger:info("Cleaning files: ~p",[CSVs]),
+    [start(File) || File <- CSVs].
 
 start(FName) ->
     {ok, Data} = file:read_file(FName),
