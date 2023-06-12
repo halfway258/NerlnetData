@@ -1,4 +1,8 @@
 Features: 13
 Labels: 5
 Data of health stats, with dummy labels (https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
-** Remember to clean data to remove line numbers!
+** Run clean.erl to remove line numbers and clean data!
+Open terminal in folder, then:
+1. erl
+2. c(clean).
+3. clean:start().
