@@ -1,4 +1,4 @@
 Features: 13
 Labels: 5
-Data of health stats, with dummy labels
+Data of health stats, with dummy labels (https://archive.ics.uci.edu/ml/datasets/Heart+Disease)
 ** Remember to clean data to remove line numbers!

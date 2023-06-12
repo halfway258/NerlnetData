@@ -1,0 +1,6 @@
+Synthetic data made of normal distributions
+Data format: 5 random samples followed by the distribution ID
+Distributions:
+    1 - Norm(0, 1)
+    2 - Norm(4, 1)
+    3 - Norm(10, 3)
