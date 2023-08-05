@@ -40,8 +40,8 @@ def split():
     df_predict_test.to_csv("mnist_prediction.csv", index=None, header=None)
 
 if __name__ == "__main__":
-
+    print("change actions in file!!")
     # move_first_to_last()
     # label_num_to_array()
-    make_predict(10)
+    # make_predict(10)
     # split()
