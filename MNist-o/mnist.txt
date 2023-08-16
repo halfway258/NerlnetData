@@ -1,0 +1,4 @@
+Features: 784 (28x28)
+Labels: 10 (0..9)
+Handwritten pictures of numbers. 
+Unpack before use!
